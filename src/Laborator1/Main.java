@@ -3,6 +3,7 @@ package Laborator1;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -83,7 +84,52 @@ public class Main {
     }
 
     public static void problema4() {
+        Random random = new Random();
 
+        int a = random.nextInt(31);
+        int b = random.nextInt(31);
+
+        while(b != 0){
+            int rest = a % b;
+            a = b;
+            b = rest;
+        }
+
+        System.out.println("Cmmdc este: " + a);
+    }
+
+    public static boolean Fibonacci(int n){
+        int a  = 0;
+        int b = 1;
+
+        if(n == 0 || n == 1){
+            return true;
+        }
+
+        int c = a + b;
+
+        while(c <= n){
+            if(c == n){
+                return true;
+            }
+            a = b;
+            b = c;
+            c = a + b;
+        }
+
+        return false;
+    }
+
+    public static void problema5() {
+        Random random = new Random();
+
+        int nr = random.nextInt(21);
+
+        if(Fibonacci(nr)){
+            System.out.println(nr + " apartine sirului Fibonacci");
+        } else {
+            System.out.println(nr + " nu apartine sirului Fibonacci");
+        }
     }
     public static void main(String[] args) throws IOException {
         int varianta;
@@ -100,6 +146,12 @@ public class Main {
                 break;
             case 3:
                 problema3();
+                break;
+            case 4:
+                problema4();
+                break;
+            case 5:
+                problema5();
                 break;
             default:
                 System.out.println("Eroare la citire");
