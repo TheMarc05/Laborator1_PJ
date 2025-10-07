@@ -63,6 +63,28 @@ public class Main {
             System.out.println("Eroare la scriere in fisierfdfdf: " + e.getMessage());
         }
     }
+
+    public static void problema3() {
+        Scanner sc = new Scanner(System.in);
+        int nr = sc.nextInt();
+
+        int nrD = 0;
+
+        for (int i = 1; i <= nr; i++) {
+            if(nr % i == 0){
+                System.out.println(i);
+                nrD++;
+            }
+        }
+
+        if(nrD == 2){
+            System.out.println("Numarul este prim");
+        }
+    }
+
+    public static void problema4() {
+
+    }
     public static void main(String[] args) throws IOException {
         int varianta;
 
@@ -75,6 +97,9 @@ public class Main {
                 break;
             case 2:
                 problema2();
+                break;
+            case 3:
+                problema3();
                 break;
             default:
                 System.out.println("Eroare la citire");
