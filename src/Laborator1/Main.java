@@ -7,6 +7,16 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void problema1() {
+        Scanner sc = new Scanner(System.in);
+
+        int l = sc.nextInt();
+        int L = sc.nextInt();
+
+        System.out.println("Perimetru: " + 2*(l+L));
+        System.out.println("Aria: " + l*L);
+    }
+
     public static void problema2() throws IOException {
         List<Integer> nr = new ArrayList<>();
 
@@ -54,7 +64,22 @@ public class Main {
         }
     }
     public static void main(String[] args) throws IOException {
-        problema2();
+        int varianta;
+
+        Scanner sc = new Scanner(System.in);
+        varianta = sc.nextInt();
+
+        switch(varianta){
+            case 1:
+                problema1();
+                break;
+            case 2:
+                problema2();
+                break;
+            default:
+                System.out.println("Eroare la citire");
+                break;
+        }
     }
 
 }
